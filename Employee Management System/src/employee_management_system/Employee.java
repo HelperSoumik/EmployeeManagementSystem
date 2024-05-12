@@ -1,5 +1,5 @@
 package employee_management_system;
-
+import java.lang.*;
 public class Employee {
 
     private String name;

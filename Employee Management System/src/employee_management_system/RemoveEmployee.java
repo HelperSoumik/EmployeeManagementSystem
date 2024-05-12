@@ -1,5 +1,5 @@
 package employee_management_system;
-
+import java.lang.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
