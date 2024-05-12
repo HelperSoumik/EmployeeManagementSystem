@@ -70,8 +70,6 @@ public class Login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == login){
-            System.out.println("BC");
-            System.out.println(tpassword.getText());
             if(tusername.getText().equals(usr)  && tpassword.getText().equals(pass)){
                 setVisible(false);
                 new MainClass();

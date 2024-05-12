@@ -22,7 +22,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
     public RemoveEmployee(ArrayList<Employee> employees) {
         this.employees = employees;  // Store reference to the employee list
 
-        this.getContentPane().setBackground(Color.yellow);
+        this.getContentPane().setBackground(Color.pink);
 
         JLabel titleLabel = new JLabel("Employee List", JLabel.CENTER);
         titleLabel.setFont(new Font("serif", Font.BOLD, 20));
@@ -55,16 +55,17 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         this.add(scrollPane);
 
         backButton = new JButton("Back");
-        backButton.setBounds(250, 550, 150, 40);
+        backButton.setBounds(450, 550, 150, 40);
         backButton.addActionListener(this);
         this.add(backButton);
 
         editButton = new JButton("Delete");
-        editButton.setBounds(450, 550, 150, 40);
+        editButton.setBounds(250, 550, 150, 40);
         editButton.addActionListener(this);
         this.add(editButton);
 
         this.setSize(1100, 650);
+        this.setLocation(200,50);
         this.setLayout(null);
         this.setVisible(true);
     }
@@ -73,6 +74,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == backButton) {
             this.dispose();  // Close the ViewEmployee window
+            new MainClass();
         } else if (e.getSource() == editButton) {
             int selectedRow = employeeTable.getSelectedRow();
             if (selectedRow != -1) {  // Check if a row is selected
@@ -89,8 +91,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Employee Deleted successfully!");
 
 
-                    System.out.println(employees);
-                    System.out.println(AddEmployee.getEmployees());
+
                     setVisible(false);
                     new MainClass();
                 } catch (NumberFormatException ex) {
